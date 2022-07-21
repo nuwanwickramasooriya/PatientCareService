@@ -1,4 +1,4 @@
-package com.aventude.patientCareService;
+package com.aventude.patientCareService.controller;
 
 import com.aventude.patientCareService.exception.enums.InvalidUserException;
 import org.slf4j.Logger;
