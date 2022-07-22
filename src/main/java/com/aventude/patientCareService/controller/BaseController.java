@@ -24,13 +24,13 @@ public class BaseController {
   /**
    * Handle invalid user exception.
    *
-   * @param ex the InvalidUserIdentityException exception object
+   * @param ex the InvalidUserException exception object
    * @return the map which contains error message and error status
    */
   @ResponseStatus(HttpStatus.BAD_REQUEST)
   @ExceptionHandler({ InvalidUserException.class })
   public @ResponseBody Map<String, Object>
-  handleInvalidUserIdentityException(InvalidUserException ex) {
+  handleInvalidUserException(InvalidUserException ex) {
     logger.error(ex.getMessage(), ex);
     HashMap<String, Object> result = new HashMap<>();
     result.put("error", true);

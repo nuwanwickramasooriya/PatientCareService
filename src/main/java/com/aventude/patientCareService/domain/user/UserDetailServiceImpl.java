@@ -23,11 +23,11 @@ import java.util.Set;
 public class UserDetailServiceImpl implements UserDetailsService {
 
   @Autowired
-  UserRepository userIdentityRepository;
+  UserRepository userRepository;
 
   @Override
   public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-    Optional<User> optionalUser = userIdentityRepository
+    Optional<User> optionalUser = userRepository
             .findUserByEmailAndEnabled(email, true);
     optionalUser.orElseThrow(() ->
             new UsernameNotFoundException("User Not Found")
